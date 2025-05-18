@@ -975,7 +975,9 @@ do -- Library
 					KName.AutomaticSize = Enum.AutomaticSize.XY
 					
 					function KeyValue:SetVisible(State)
+                        pcall(function()
 						KName.Visible = State;
+                        end)
 					end;
 					
 					function KeyValue:Update(NKey, NewName, NewMode)
