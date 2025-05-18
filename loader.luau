@@ -443,8 +443,8 @@ do -- Library
 			local slidingalpha = false
 
 			local function update()
-				local real_pos         = game:GetService("UserInputService"):GetMouseLocation()
-				local mouse_position   = Vector2.new(real_pos.X - 5, real_pos.Y - 30)
+                local real_pos = game:GetService("UserInputService"):GetMouseLocation()
+                local mouse_position = Vector2.new(real_pos.X, real_pos.Y - game:GetService("GuiService"):GetGuiInset().Y)
 				local relative_palette = (mouse_position - Color.AbsolutePosition)
 				local relative_hue     = (mouse_position - Hue.AbsolutePosition)
 				local relative_opacity = (mouse_position - Alpha.AbsolutePosition)
