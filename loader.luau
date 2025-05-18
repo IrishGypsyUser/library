@@ -716,6 +716,21 @@ do -- Library
 
 			TopFrame.Parent = MainFrame
 
+            local TitleLabel = Instance.new("TextLabel")
+            TitleLabel.Name = "TitleLabel"
+            TitleLabel.AnchorPoint = Vector2.new(0, 0.5)
+            TitleLabel.BackgroundTransparency = 1
+            TitleLabel.Position = UDim2.new(0, 30, 0.5675, 0) -- Next to the logo
+            TitleLabel.Size = UDim2.new(1, -35, 1, 0) -- Leaves margin after logo
+            TitleLabel.FontFace = menu_font
+            TitleLabel.Text = Options.Name or "My UI"
+            TitleLabel.TextSize = 10
+            TitleLabel.TextXAlignment = Enum.TextXAlignment.Left
+            TitleLabel.TextYAlignment = Enum.TextYAlignment.Center
+            TitleLabel.Parent = TopFrame
+            TitleLabel.TextColor3 = Color3.fromRGB(200, 200, 200)
+			TitleLabel.TextStrokeTransparency = 0
+
 			local Tabs = Instance.new("ScrollingFrame")
 			Tabs.Name = "Tabs"
 			Tabs.Size = UDim2.new(0, 80,1, -25)
