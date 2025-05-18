@@ -631,26 +631,7 @@ do -- Library
 	end;
 
 	function Library:Resize(object, background)
-		local start, objectposition, dragging, currentpos, currentsize
 
-		Library:Connection(object.MouseButton1Down, function(input)
-			dragging = true
-			start = input
-		end)
-		Library:Connection(Mouse.Move, function(input)
-			if dragging then
-				local MouseLocation = game:GetService("UserInputService"):GetMouseLocation()
-				local X = math.clamp(MouseLocation.X - background.AbsolutePosition.X, 550, 9999)
-				local Y = math.clamp((MouseLocation.Y - 36) - background.AbsolutePosition.Y, 600, 9999)
-				currentsize = UDim2.new(0,X,0,Y)
-				background.Size = currentsize
-			end;
-		end)
-		Library:Connection(game:GetService("UserInputService").InputEnded, function(input)
-			if input.UserInputType == Enum.UserInputType.MouseButton1 then
-				dragging = false
-			end
-		end)
 	end
 
 	do
